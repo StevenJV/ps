@@ -4,10 +4,10 @@ Set-Alias gitc GitCommit
 set-alias log GitLog
 set-alias shortlog GitShortLog
 set-alias cleanjson GitCheckoutJson
-set-alias branches c:\code\branches.ps1
-set-Alias remotebranches c:\code\remotebranches.ps1
-set-Alias launch c:\code\launch.ps1
-set-Alias dirdate c:\code\dirdate.ps1
+set-alias branches c:\code\ps\branches.ps1
+set-Alias remotebranches c:\code\ps\remotebranches.ps1
+set-Alias launch c:\code\ps\launch.ps1
+set-Alias dirdate c:\code\ps\dirdate.ps1
 function GitShortLog {
   git log --pretty=format:"%h %ad %cn: %s" --date=short
 }
