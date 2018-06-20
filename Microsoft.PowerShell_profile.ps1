@@ -2,14 +2,15 @@ import-module psreadline
 set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
-set-alias shortlog GitShortLog
+set-alias slog GitShortLog
 set-alias cleanjson GitCheckoutJson
 set-alias branches c:\code\ps\branches.ps1
 set-Alias remotebranches c:\code\ps\remotebranches.ps1
 set-Alias launch c:\code\ps\launch.ps1
 set-Alias dirdate c:\code\ps\dirdate.ps1
+. C:\code\dev-deploy\Launcher\Launcher.ps1
 function GitShortLog {
-  git log --pretty=format:"%h %ad %cn: %s" --date=short
+  git log --pretty=format:'%C(yellow) %ad %C(blue)%h%Cred%d %Creset%s%Cred [%cn]' --decorate --date=format:'%Y-%m-%d %H:%M'
 }
 function GitLog {
   git log --name-only
@@ -20,52 +21,6 @@ function GitCommit {
 function GitCheckoutJson {
   git checkout client/public/assets/fonts/fontello/config.json
 }
-# Powershell to do a remote session on board boxes and fishes easily from @Ricardo
-# function SetMyCred {
-#   if (!$global:cred) {
-#     $global:cred = Get-Credential dev\svore
-#   }
-# }
-# function e($server) {
-#   SetMyCred
-#   $boardBoxes = @("cobalt", "carbon", "iron", "platinum")
-#   $fish = @("ray", "silverfish", "monkfish", "gar", "carp", "barracuda", "marlin", "goby", "grouper")
-#   if ($boardBoxes -contains $server) {
-#     $server = "$server-board"
-#   }
-#   if ($fish -contains $server) {
-#     $server = "$server-qa"
-#   }
-#   Enter-PSSession "$server.dev.labs" -Credential $global:cred
-# }
-# # Powershell convenience for suite launch from @Ricardo
-# function l {
-#   Push-Location c:\grc\;rake launch:basic;Pop-Location
-# }
-# function b {
-#   Push-Location c:\grc\;rake build;Pop-Location
-# }
-# function bn {
-#   Push-Location c:\grc\;rake build:dot_net;Pop-Location
-# }
-# function bt {
-#   Push-Location c:\grc\;rake build:project project=\platform\TaskRunner\TaskRunner.csproj;Pop-Location
-# }
-# function c {
-#   Push-Location c:\grc\;rake clean;Pop-Location
-# }
-# # Powershell for easy push to QA from @Ricardo
-# function qa() {
-#     param($server, [Switch] $force)
-#     if ($server -Ne "silverfish") {
-#         $server = "qa_$server"
-#     }
-#     if ($force) {
-#         $extraCommands = "-f"
-#     }
-#     Write-Host "git push origin HEAD:$server $extraCommands"
-#     & git push origin HEAD:$server $extraCommands
-# }
 
 $env:Term="xterm"
 # Chocolatey profile
