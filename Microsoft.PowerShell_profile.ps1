@@ -6,6 +6,7 @@ set-alias slog GitShortLog
 set-alias branches c:\code\ps\branches.ps1
 set-Alias remotebranches c:\code\ps\remotebranches.ps1
 set-Alias dirdate c:\code\ps\dirdate.ps1
+Set-Alias grep c:\code\ps\Grep.ps1
 . C:\code\dev-deploy\Launcher\Launcher.ps1
 function GitShortLog {
   git log --pretty=format:'%C(yellow) %ad %C(blue)%h%Cred%d %Creset%s%Cred [%cn]' --decorate --date=format:'%Y-%m-%d %H:%M'
