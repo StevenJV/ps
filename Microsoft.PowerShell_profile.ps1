@@ -3,10 +3,8 @@ set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
 set-alias slog GitShortLog
-set-alias cleanjson GitCheckoutJson
 set-alias branches c:\code\ps\branches.ps1
 set-Alias remotebranches c:\code\ps\remotebranches.ps1
-set-Alias launch c:\code\ps\launch.ps1
 set-Alias dirdate c:\code\ps\dirdate.ps1
 . C:\code\dev-deploy\Launcher\Launcher.ps1
 function GitShortLog {
@@ -17,9 +15,6 @@ function GitLog {
 }
 function GitCommit {
  git commit
-}
-function GitCheckoutJson {
-  git checkout client/public/assets/fonts/fontello/config.json
 }
 
 $env:Term="xterm"
