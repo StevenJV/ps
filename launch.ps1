@@ -1,1 +1,0 @@
-rake launch:rabbit
