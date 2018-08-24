@@ -17,8 +17,8 @@ function buildthem
     }
 }
 
-Set-Location \code\insights\etl
-$EtlDirectory = "C:\code\insights\etl\"
+$EtlDirectory = "$PSScriptRoot\..\insights\etl\"
+Set-Location $EtlDirectory
 $SchemaPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.Schema\Navex.Insights.Etl.Schema.csproj"
 buildthem $SchemaPath
 $PackageBuilderPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.SsisPackageBuilder\Navex.Insights.Etl.SsisPackageBuilder.csproj"
