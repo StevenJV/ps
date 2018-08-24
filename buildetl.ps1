@@ -17,10 +17,10 @@ function buildthem
     }
 }
 
-cd \code\insights\etl
-$EtlDirectory = "C:\code\insights\etl"
-$SchemaPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Schema\Navex.Insights.Schema.csproj"
-buildthem $SchemaPath 
+Set-Location \code\insights\etl
+$EtlDirectory = "C:\code\insights\etl\"
+$SchemaPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.Schema\Navex.Insights.Etl.Schema.csproj"
+buildthem $SchemaPath
 $PackageBuilderPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.SsisPackageBuilder\Navex.Insights.Etl.SsisPackageBuilder.csproj"
 buildthem $PackageBuilderPath
 Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging
