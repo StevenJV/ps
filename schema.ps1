@@ -1,0 +1,1 @@
+\code\insights\etl\Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging

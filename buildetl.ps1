@@ -19,9 +19,12 @@ function buildthem
 
 $EtlDirectory = "$PSScriptRoot\..\insights\etl\"
 Set-Location $EtlDirectory
-$SchemaPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.Schema\Navex.Insights.Etl.Schema.csproj"
-buildthem $SchemaPath
-$PackageBuilderPath = Join-Path -Path $EtlDirectory -ChildPath "Navex.Insights.Etl.SsisPackageBuilder\Navex.Insights.Etl.SsisPackageBuilder.csproj"
-buildthem $PackageBuilderPath
-Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging
+Get-ChildItem $EtlDirectory -Recurse -Filter *.csproj | 
+Foreach-Object {
+  buildthem $_.FullName
+}
+
+Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging
+
 Navex.Insights.Etl.SsisPackageBuilder\bin\Debug\Navex.Insights.Etl.SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1
+
