@@ -21,10 +21,11 @@ $EtlDirectory = "$PSScriptRoot\..\insights\etl\"
 Set-Location $EtlDirectory
 Get-ChildItem $EtlDirectory -Recurse -Filter *.csproj | 
 Foreach-Object {
+  Write-Host "building $_.FullName" -foregroundcolor green
   buildthem $_.FullName
 }
-
+Write-Host "running Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging" -foregroundcolor green
 Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging
-
+Write-Host "running SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1" -foregroundcolor green
 Navex.Insights.Etl.SsisPackageBuilder\bin\Debug\Navex.Insights.Etl.SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1
 
