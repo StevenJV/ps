@@ -25,7 +25,7 @@ Foreach-Object {
   buildthem $_.FullName
 }
 Write-Host "running Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging" -foregroundcolor green
-Navex.Insights.Etl.Schema\bin\Debug\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging
+Navex.Insights.Etl.Schema\bin\Release\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1 --SourceServer=. --RunStaging --StagingServer=. --StagingDb=Insights_Staging 
 Write-Host "running SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1" -foregroundcolor green
-Navex.Insights.Etl.SsisPackageBuilder\bin\Debug\Navex.Insights.Etl.SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1
+Navex.Insights.Etl.SsisPackageBuilder\bin\Release\Navex.Insights.Etl.SsisPackageBuilder.exe --CustomerKey=test1 --SourceDb=cm_Test1 --PackageDirectory C:\code\insights\etl\Navex.Insights.Ssis
 
