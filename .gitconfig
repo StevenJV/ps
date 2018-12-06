@@ -1,0 +1,69 @@
+[user]
+	name = 
+	email = 
+[gui]
+
+[credential]
+	helper = wincred
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[core]
+	editor = code -w
+	autocrlf = input
+  safecrlf=false
+	mergeoptions = --no-edit
+
+[push]
+	default = simple
+[help]
+	autocorrect = 1
+[alias]
+	l2 = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	co = checkout
+	a = add
+	l = log
+	last = log -1 HEAD
+	ca = commit --amend -C HEAD
+	d = diff
+	br = branch
+	dc = diff --cached
+	today = log --stat --since='1 day ago' --graph --pretty=oneline --abbrev-commit --date=relative
+	unstage = reset HEAD --
+	s = status
+	who = shortlog -s -e --no-merges --
+	l1 = log --pretty=format:'%s * %an, %ar' --graph
+	standup = log --since yesterday --oneline --author 'SYSTEM'
+	stats = diff --stat
+	up = !git fetch origin && git rebase origin/master
+	done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && git push
+	st = status
+	c = commit -m
+	amend = commit --amend
+	wdiff = diff --word-diff
+	aliases = config --get-regexp alias
+	pp = !git pull && git push
+	cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
+	ci = commit
+	ir = !git rebase -i origin/master
+	l3 = log --pretty=format:'%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]' --decorate
+	undo = reset head~
+	hist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --graph --abbrev-commit --date=relative
+[merge]
+	tool = kdiff3
+	guitool = kdiff3
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+	tool = vscode
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	trustExitCode = false
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = "code \"$LOCAL\" \"$REMOTE\" --wait --diff  "
