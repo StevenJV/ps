@@ -23,10 +23,13 @@ iisreset /stop
 
 $ApiDirectory = "$PSScriptRoot\..\insights\api\"
 Push-Location $ApiDirectory
+
 Get-ChildItem $ApiDirectory -Recurse -Filter *.csproj | 
 Foreach-Object {
   buildthem $_.FullName
 }
+
+Remove-item -Force Navex.Insights.QueueConsumer\publish\*.*
 
 Write-Host "Publishing Navex.Insights.QueueConsumer.csproj" -foregroundcolor Blue
 dotnet publish 'C:\code\insights\api\Navex.Insights.QueueConsumer\Navex.Insights.QueueConsumer.csproj' -c Release -r win10-x64 -o 'C:\code\insights\api\Navex.Insights.QueueConsumer\publish'
@@ -38,3 +41,4 @@ Write-Host "restarting QueueConsumer" -foregroundcolor blue
 C:\code\insights\api\Navex.Insights.QueueConsumer\publish\Navex.Insights.QueueConsumer.exe start
 iisreset /start
 
+Pop-Location
