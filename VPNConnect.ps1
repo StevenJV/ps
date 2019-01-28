@@ -1,4 +1,4 @@
-#$vpnName = "Navex Charlotte";
+Import-Module SecureTokens # from https://github.com/brsh/SecureTokens 
 $TokenU = (Get-SecureToken -Name mailname).Token
 $TokenP = (Get-SecureToken -Name mail).Token
 if ($TokenP) {
