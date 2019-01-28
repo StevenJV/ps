@@ -1,10 +1,6 @@
 set-location \code\insights
 
-$vpnName = "Navex Charlotte";
-    $vpn = Get-VpnConnection -Name $vpnName;
-    if($vpn.ConnectionStatus -eq "Disconnected"){
-    rasdial $vpnName;
-    }
+. $PSScriptRoot\VPNConnect
 
 . $PSScriptRoot\buildetl
 

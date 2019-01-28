@@ -29,6 +29,7 @@ Foreach-Object {
   buildthem $_.FullName
 }
 
+Write-Host "Emptying QueueConsumer publish directory" -ForegroundColor Blue
 Remove-item -Force Navex.Insights.QueueConsumer\publish\*.*
 
 Write-Host "Publishing Navex.Insights.QueueConsumer.csproj" -foregroundcolor Blue
