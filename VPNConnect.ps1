@@ -1,6 +1,8 @@
-Import-Module SecureTokens # from https://github.com/brsh/SecureTokens 
-$TokenU = (Get-SecureToken -Name mailname).Token
-$TokenP = (Get-SecureToken -Name mail).Token
+Import-Module SecureTokens 
+# from https://github.com/brsh/SecureTokens 
+# download this, import-module it, then use Add-SecureToken twice for tokens `vpnuser` and `vpnpwd`
+$TokenU = (Get-SecureToken -Name vpnuser).Token
+$TokenP = (Get-SecureToken -Name vpnpwd).Token
 if ($TokenP) {
   $vpnName = "Charlotte";
   Write-Host "rasdial " $vpnName $TokenU -ForegroundColor Blue
@@ -10,5 +12,5 @@ if ($TokenP) {
     }
 }
  else {
-    "No token found"
- }
+    "No token found. Use Add-SecureToken twice for tokens 'vpnuser' and 'vpnpwd'"
+}
