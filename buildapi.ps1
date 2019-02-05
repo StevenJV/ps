@@ -14,6 +14,7 @@ function buildthem
 
         Write-Host "Building $($path)" -ForegroundColor Green
         & "$($msBuildExe)" "$($path)" /t:Build /verbosity:quiet /property:Configuration=Release
+        
     }
 }
 Write-Host "stopping QueueConsumer" -foregroundcolor blue
@@ -36,7 +37,7 @@ Write-Host "Publishing Navex.Insights.QueueConsumer.csproj" -foregroundcolor Blu
 dotnet publish 'C:\code\insights\api\Navex.Insights.QueueConsumer\Navex.Insights.QueueConsumer.csproj' -c Release -r win10-x64 -o 'C:\code\insights\api\Navex.Insights.QueueConsumer\publish'
 
 Write-Host "Publishing Navex.Insights.API.csproj" -foregroundcolor Blue
-dotnet publish 'C:\code\insights\api\Navex.Insights.API\Navex.Insights.API.csproj' --no-build -o 'C:\code\insights\api\Navex.Insights.API\publish\'
+dotnet publish 'C:\code\insights\api\Navex.Insights.API\Navex.Insights.API.csproj' --no-build -o 'C:\code\insights\API\publish'
 
 Write-Host "restarting QueueConsumer" -foregroundcolor blue
 C:\code\insights\api\Navex.Insights.QueueConsumer\publish\Navex.Insights.QueueConsumer.exe start
