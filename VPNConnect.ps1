@@ -1,4 +1,4 @@
-Import-Module SecureTokens 
+import-module SecureTokens -ArgumentList $true
 $vpnName = "Charlotte";  # change this to the name of your vpn connection 
 $TokenU = (Get-SecureToken -Name vpnuser).Token
 $TokenP = (Get-SecureToken -Name vpnpwd).Token
