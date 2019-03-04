@@ -7,5 +7,9 @@ set-location \code\insights
 . $PSScriptRoot\buildapi
 
 . ..\dev-deploy\Launcher\Launcher.ps1
-$engines = Launch-DevDeploy -verbose
+# $engines = Launch-DevDeploy -verbose
+Push-Location  UI\insights-ui
+npm run build 
+Pop-Location
+
 
