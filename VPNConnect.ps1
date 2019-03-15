@@ -1,4 +1,4 @@
-import-module SecureTokens -ArgumentList $true
+import-module SecureTokens -ArgumentList $true # from https://github.com/brsh/SecureTokens 
 $vpnName = "Charlotte";  # change this to the name of your vpn connection 
 $TokenU = (Get-SecureToken -Name vpnuser).Token
 $TokenP = (Get-SecureToken -Name vpnpwd).Token
