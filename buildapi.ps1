@@ -21,6 +21,8 @@ Write-Host "stopping QueueConsumer" -foregroundcolor blue
 net stop navex.Insights.QueueConsumer
 Write-Host "stopping IIS" -foregroundcolor blue
 iisreset /stop
+Write-Host "cleaning \logs\" -foregroundcolor blue
+remove-item c:\logs\*.* -force 
 
 $ApiDirectory = "$PSScriptRoot\..\insights\api\"
 Push-Location $ApiDirectory

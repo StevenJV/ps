@@ -1,7 +1,10 @@
 import-module SecureTokens -ArgumentList $true # from https://github.com/brsh/SecureTokens 
+# $vpnName = "Atlanta";  # change this to the name of your vpn connection 
 $vpnName = "Charlotte";  # change this to the name of your vpn connection 
 $TokenU = (Get-SecureToken -Name vpnuser).Token
-$TokenP = (Get-SecureToken -Name vpnpwd).Token
+Write-Output $TokenU
+$TokenP = (Get-SecureToken -Name vpnpwd).Token 
+Write-Output $TokenP 
 if ($TokenP -and $TokenU) {
   Write-Host "using rasdial to connect: " $vpnName $TokenU -ForegroundColor Blue
     $vpn = Get-VpnConnection -Name $vpnName;

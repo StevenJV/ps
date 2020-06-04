@@ -1,6 +1,6 @@
 set-location \code\insights
 
-. $PSScriptRoot\VPNConnect
+#. $PSScriptRoot\VPNConnect
 
 . $PSScriptRoot\buildetl
 
@@ -9,7 +9,7 @@ set-location \code\insights
 . ..\dev-deploy\Launcher\Launcher.ps1
 # $engines = Launch-DevDeploy -verbose
 Push-Location  UI\insights-ui
-npm run build 
+npm run rebuild 
 Pop-Location
 
 

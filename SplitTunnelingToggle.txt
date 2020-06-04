@@ -1,0 +1,7 @@
+-- turn Split Tunneling on
+Get-VpnConnection | ?{$_.ServerAddress -imatch ".navexglobal.com$" } |? { $_.SplitTunneling -eq $false } |% { Set-VpnConnection -name $_.Name -ServerAddress $_.ServerAddress -SplitTunneling $(-not $_.SplitTunneling); write "Updated $($_.Name) spit tunneling = $(-not $_.SplitTunneling)" }
+
+
+
+-- turn Split Tunneling off
+Get-VpnConnection | ?{$_.ServerAddress -imatch ".navexglobal.com$" } |? { $_.SplitTunneling -eq $true } |% { Set-VpnConnection -name $_.Name -ServerAddress $_.ServerAddress -SplitTunneling $(-not $_.SplitTunneling); write "Updated $($_.Name) spit tunneling = $(-not $_.SplitTunneling)" }
