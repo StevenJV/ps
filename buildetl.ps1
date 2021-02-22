@@ -9,7 +9,7 @@ function buildthem
     {
         $msBuildExe="MSBuild"
         
-        Write-Host "Cleaning $($path)" -foregroundcolor Yellow
+        Write-Host "Cleaning $($path)" -foregroundcolor Green
         & "$($msBuildExe)" "$($path)" /t:Clean /verbosity:quiet /property:Configuration=Release
 
         Write-Host "Building $($path)" -ForegroundColor Green
@@ -19,11 +19,24 @@ function buildthem
 
 $EtlDirectory = "$PSScriptRoot\..\insights\etl\"
 $migrationDirectory = "$PSScriptRoot\..\insights\API\Navex.Insights.Migrations\bin\Release\netcoreapp3.1"
+
+
+Write-Host "building old etl, ssis" -foregroundcolor Yellow
 Push-Location $EtlDirectory
-Get-ChildItem $EtlDirectory -Recurse -Filter *.csproj | 
+Get-ChildItem $EtlDirectory -Recurse -Filter *.csproj |
 Foreach-Object {
   buildthem $_.FullName
 }
+Pop-Location
+
+Write-Host "building new migrator" -foregroundcolor Yellow
+Push-Location $migrationDirectory
+Get-ChildItem $migrationDirectory -Recurse -Filter *.csproj |
+Foreach-Object {
+  buildthem $_.FullName
+}
+Pop-Location
+
 Write-Host "running Migration" -foregroundcolor green
 . $migrationDirectory\Navex.Insights.Migrations.exe
 
