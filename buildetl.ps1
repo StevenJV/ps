@@ -20,14 +20,13 @@ function buildthem
 $EtlDirectory = "$PSScriptRoot\..\insights\etl\"
 $migrationDirectory = "$PSScriptRoot\..\insights\API\Navex.Insights.Migrations\bin\Release\netcoreapp3.1"
 
+Push-Location $EtlDirectory
 
 Write-Host "building old etl, ssis" -foregroundcolor Yellow
-Push-Location $EtlDirectory
 Get-ChildItem $EtlDirectory -Recurse -Filter *.csproj |
 Foreach-Object {
   buildthem $_.FullName
 }
-Pop-Location
 
 Write-Host "building new migrator" -foregroundcolor Yellow
 Push-Location $migrationDirectory
@@ -37,6 +36,11 @@ Foreach-Object {
 }
 Pop-Location
 
+Write-Host "running Schema.exe --SourceDb=cm_Test1" -foregroundcolor green
+Navex.Insights.Etl.Schema\bin\Release\Navex.Insights.Etl.Schema.exe --SourceDb=cm_Test1
+
+Write-Host "Schema.exe --SourceDb=cm_insightsqalocal1" -ForegroundColor green
+Navex.Insights.Etl.Schema\bin\Release\Navex.Insights.Etl.Schema.exe --SourceDb=cm_insightsqalocal1
 Write-Host "running Migration" -foregroundcolor green
 . $migrationDirectory\Navex.Insights.Migrations.exe
 
