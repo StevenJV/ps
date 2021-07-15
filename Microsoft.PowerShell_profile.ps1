@@ -1,4 +1,3 @@
-import-module psreadline
 set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
@@ -31,22 +30,18 @@ function aws-login{
   }
 }
 
-$env:Term="xterm"
+#import-module psreadline
 
-Import-Module posh-git
-$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-$GitPromptSettings.AfterText += "`n"
-Import-Module oh-my-posh
-# Set-Theme Darkblood
+Import-Module posh-git 
+#$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+#$GitPromptSettings.AfterText += "`n"
 
-# Chocolatey profile
-# $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-# if (Test-Path($ChocolateyProfile)) {
-#   Import-Module "$ChocolateyProfile"
-# }
-#if(Test-Path Function:\Prompt) {Rename-Item Function:\Prompt PrePoshGitPrompt -Force}
-# Load posh-git  profile
-#. 'C:\Program Files\WindowsPowerShell\Modules\posh-git\0.7.1\posh-git.profile.ps1'
-#. 'C:\Users\steve\OneDrive\Documents\WindowsPowerShell\ConemuPrompt.ps1'
-#Rename-Item Function:\Prompt PoshGitPrompt -Force
-#function Prompt() {if(Test-Path Function:\PrePoshGitPrompt){++$global:poshScope; New-Item function:\script:Write-host -value "param([object] `$object, `$backgroundColor, `$foregroundColor, [switch] `$nonewline) " -Force | Out-Null;$private:p = PrePoshGitPrompt; if(--$global:poshScope -eq 0) {Remove-Item function:\Write-Host -Force}}PoshGitPrompt}
+Import-Module oh-my-posh 
+#Set-PoshPrompt Powerlevel10k_Lean
+Set-PoshPrompt -Theme ~/.mytheme.omp.json
+# Paradox, Fish, Agnoster, Darkblood 
+
+#Import-Module -Name Terminal-Icons
+
+#start-service 'OpenSSH Authentication Agent'
+#Start-SshAgent -Quiet
