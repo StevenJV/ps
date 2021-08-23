@@ -64,15 +64,20 @@
     {
         "defaults": 
         {
-            "backgroundImage": "c:/users/steve/OneDrive/Pictures/Tarantula Nebula.jpg",
+            //"backgroundImage": "c:/users/steve/OneDrive/Pictures/love_music_2-wallpaper-2560x1440.jpg",
             "backgroundImageAlignment": "topLeft",
-            "backgroundImageOpacity": 0.59999999999999998,
+            "backgroundImageOpacity": 0.1,
             "backgroundImageStretchMode": "uniformToFill",
             "closeOnExit": "never",
             "colorScheme": "Campbell",
             "cursorShape": "vintage",
             "fontFace": "Cascadia Code PL",
-            "startingDirectory": "C:/code"
+            "startingDirectory": "C:/code",
+            "acrylicOpacity": 0.5,
+            "unfocusedAppearance": 
+            {
+                "backgroundImageOpacity": 0.6
+            },
         },
         "list": 
         [
@@ -81,6 +86,12 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
+            },
+            {
+              "name": "Powershell (elevated)",
+              "commandline": "powershell.exe -command Start-Process -Verb RunAs \"shell:appsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App\"",
+              "hidden": false,
+              "icon": "ms-appx:///Images/Square44x44Logo.targetsize-32.png"
             },
             {
                 "commandline": "cmd.exe",
