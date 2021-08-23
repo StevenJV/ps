@@ -1,0 +1,32 @@
+{
+  "editor.fontFamily": "Cascadia Code PL",
+  "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "team.showWelcomeMessage": false,
+    "editor.minimap.enabled": true,
+    "git.autofetch": true,
+    "debug.openDebug": "openOnDebugBreak",
+    "debug.internalConsoleOptions": "neverOpen",
+    "editor.fontSize": 13,
+    "editor.scrollbar.horizontal": "visible",
+    "editor.scrollbar.horizontalScrollbarSize": 12,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorCustomizations": {
+    "editor.background": "#020016"
+    },
+    "team.showFarewellMessage": false,
+    "mssql.connections": [
+      {
+        "server": "{{put-server-name-here}}",
+        "database": "{{put-database-name-here}}",
+        "user": "{{put-username-here}}",
+        "password": "{{put-password-here}}"
+      }
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontLigatures": null,
+    "window.zoomLevel": 2,
+  
+  }
+
+  
