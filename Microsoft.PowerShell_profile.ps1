@@ -2,12 +2,21 @@ set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
 set-alias slog GitShortLog
-set-alias branches c:\code\ps\branches.ps1
-set-Alias remotebranches c:\code\ps\remotebranches.ps1
-set-Alias dirdate c:\code\ps\dirdate.ps1
-Set-Alias grep c:\code\ps\Grep.ps1
-set-alias findfile c:\code\ps\findfile.ps1
-. C:\code\dev-deploy\Launcher\Launcher.ps1
+set-alias branches ~\source\repos\ps\branches.ps1
+set-Alias remotebranches ~\source\repos\ps\remotebranches.ps1
+set-Alias dirdate ~\source\repos\ps\dirdate.ps1
+Set-Alias grep ~\source\repos\ps\Grep.ps1
+set-alias findfile ~\source\repos\ps\findfile.ps1
+. \users\steve\source\repos\dev-deploy\Launcher\Launcher.ps1
+
+function repos {
+  cd ~\source\repos\
+}
+
+
+function insights {
+  cd ~\source\repos\insights
+}
 function GitShortLog {
   git log --pretty=format:'%C(yellow) %ad %C(blue)%h%Cred%d %Creset%s%Cred [%cn]' --decorate --date=format:'%Y-%m-%d %H:%M'
 }
@@ -22,7 +31,7 @@ function aws-login{
   $complete = Read-Host -Prompt 'Signed in? (Y/N)'
   if ($complete -eq 'Y' -OR $complete -eq 'y'){
     # this is how local-dev Insights reads the credentials for sending notifications
-      Copy-Item C:\Users\steve\.aws\credentials C:\aws
+      Copy-Item \Users\steve\.aws\credentials \aws
       Write-Host 'Ready to go'
   }
   else{
@@ -45,3 +54,9 @@ Set-PoshPrompt -Theme ~/.mytheme.omp.json
 
 #start-service 'OpenSSH Authentication Agent'
 #Start-SshAgent -Quiet
+
+# Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}

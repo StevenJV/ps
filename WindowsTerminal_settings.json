@@ -1,13 +1,7 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    // Add custom actions and keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
     "actions": 
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
         {
             "command": 
             {
@@ -17,18 +11,27 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        // Press Ctrl+Shift+F to open the search box
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
+        {
+            "command": 
+            {
+                "action": "commandPalette"
+            },
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
+        },
         {
             "command": 
             {
@@ -39,45 +42,41 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "newTab",
-            "keys": "ctrl+T"
-        },
-        {
-            "command": "splitPane",
+            "command": 
+            {
+                "action": "splitPane"
+            },
             "keys": "ctrl+\\"
         },
         {
             "command": "closePane",
-            "keys": "ctrl+W"
-        },
-        {
-            "command": "commandPalette",
-            "keys": "ctrl+shift+p"
+            "keys": "ctrl+w"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "initialCols": 120,
-    "initialRows": 50,
+    "initialRows": 40,
     "profiles": 
     {
         "defaults": 
         {
-            //"backgroundImage": "c:/users/steve/OneDrive/Pictures/love_music_2-wallpaper-2560x1440.jpg",
+            "acrylicOpacity": 0.58,
+            "backgroundImage": "c:/users/steve/Pictures/mohammad-gradient.jpg",
             "backgroundImageAlignment": "topLeft",
-            "backgroundImageOpacity": 0.1,
+            "backgroundImageOpacity": 0.10000000000000001,
             "backgroundImageStretchMode": "uniformToFill",
             "closeOnExit": "never",
             "colorScheme": "Campbell",
             "cursorShape": "vintage",
-            "fontFace": "Cascadia Code PL",
-            "startingDirectory": "C:/code",
-            "acrylicOpacity": 0.5,
+            "fontFace": "Cascadia Code",
+            "startingDirectory": "%USERPROFILE%\\source\\repos",
             "unfocusedAppearance": 
             {
-                "backgroundImageOpacity": 0.6
+                "backgroundImageOpacity": 0.8
             },
+            "useAcrylic": true
         },
         "list": 
         [
@@ -88,10 +87,10 @@
                 "name": "Windows PowerShell"
             },
             {
-              "name": "Powershell (elevated)",
-              "commandline": "powershell.exe -command Start-Process -Verb RunAs \"shell:appsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App\"",
-              "hidden": false,
-              "icon": "ms-appx:///Images/Square44x44Logo.targetsize-32.png"
+                "commandline": "powershell.exe -command Start-Process -Verb RunAs \"shell:appsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App\"",
+                "hidden": false,
+                "icon": "ms-appx:///Images/Square44x44Logo.targetsize-32.png",
+                "name": "Powershell (elevated)"
             },
             {
                 "commandline": "cmd.exe",
@@ -110,7 +109,7 @@
     "schemes": 
     [
         {
-            "background": "#050A24",
+            "background": "#094142",
             "black": "#0C0C0C",
             "blue": "#0037DA",
             "brightBlack": "#767676",
