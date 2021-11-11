@@ -7,8 +7,8 @@ function buildthem
     )
     process
     {
-        #$msBuildExe = 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\msbuild.exe'
-        $msBuildExe = MSBuild 
+        $msBuildExe = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe'
+        #$msBuildExe = MSBuild 
         
         Write-Host "Cleaning $($path)" -foregroundcolor Yellow
         & "$($msBuildExe)" "$($path)" /t:Clean /verbosity:quiet /property:Configuration=Release
