@@ -36,10 +36,10 @@ Write-Host "Emptying QueueConsumer publish directory" -ForegroundColor Blue  -Ba
 Remove-item -Force Navex.Insights.QueueConsumer\publish\*.*
 
 Write-Host "Publishing Navex.Insights.QueueConsumer.csproj" -foregroundcolor Blue -BackgroundColor White
-dotnet publish 'C:\code\insights\api\Navex.Insights.QueueConsumer\Navex.Insights.QueueConsumer.csproj' -c Release -r win10-x64 -o 'C:\code\insights\api\Navex.Insights.QueueConsumer\publish'
+dotnet publish '$ApiDirectory\Navex.Insights.QueueConsumer\Navex.Insights.QueueConsumer.csproj' -c Release -r win10-x64 -o 'C:\code\insights\api\Navex.Insights.QueueConsumer\publish'
 
 Write-Host "Publishing Navex.Insights.API.csproj" -foregroundcolor Blue -BackgroundColor White
-dotnet publish 'C:\code\insights\api\Navex.Insights.API\Navex.Insights.API.csproj' --no-build -o 'C:\code\insights\API\publish'
+dotnet publish '$ApiDirectory\api\Navex.Insights.API\Navex.Insights.API.csproj' --no-build -o 'C:\code\insights\API\publish'
 
 
 . $PSScriptRoot\startinsights.ps1

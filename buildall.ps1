@@ -1,4 +1,4 @@
-set-location \code\insights
+set-location \Users\steve\source\repos\insights
 
 #. $PSScriptRoot\VPNConnect
 $T = Get-Date -DisplayHint time
