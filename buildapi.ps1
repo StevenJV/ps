@@ -18,7 +18,7 @@ function buildthem
         
     }
 }
-. $PSScriptRoot\stopinsights.ps1
+. "$PSScriptRoot\..\insights\tools\psscripts\stopservices.ps1"
 
 Write-Host "cleaning \logs\" -foregroundcolor blue -BackgroundColor White
 remove-item c:\logs\*.* -force -exclude HostService-log*.txt
@@ -42,6 +42,6 @@ Write-Host "Publishing Navex.Insights.API.csproj" -foregroundcolor Blue -Backgro
 dotnet publish '$ApiDirectory\api\Navex.Insights.API\Navex.Insights.API.csproj' --no-build -o 'C:\code\insights\API\publish'
 
 
-. $PSScriptRoot\startinsights.ps1
+. "$PSScriptRoot\\..\insights\tools\psscripts\startservices.ps1"
 
 Pop-Location
