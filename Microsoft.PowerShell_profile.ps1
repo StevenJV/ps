@@ -1,3 +1,6 @@
+#setx REPODIR "C:\Users\steve\source\repos"
+
+
 set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
@@ -7,10 +10,11 @@ set-Alias remotebranches ~\source\repos\ps\remotebranches.ps1
 set-Alias dirdate ~\source\repos\ps\dirdate.ps1
 Set-Alias grep ~\source\repos\ps\Grep.ps1
 set-alias findfile ~\source\repos\ps\findfile.ps1
+#Set-Alias Python ~\AppData\Local\Microsoft\WindowsApps\python3.9.exe
 . \users\steve\source\repos\dev-deploy\Launcher\Launcher.ps1
 
 function repos {
-  cd ~\source\repos\
+  cd %REPODIR%
 }
 
 
@@ -27,7 +31,7 @@ function GitCommit {
  git commit
 }
 function aws-login{
-  navex aws login
+  navex aws login  --skip-version-check
   $complete = Read-Host -Prompt 'Signed in? (Y/N)'
   if ($complete -eq 'Y' -OR $complete -eq 'y'){
     # this is how local-dev Insights reads the credentials for sending notifications
