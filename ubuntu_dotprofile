@@ -1,0 +1,48 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes global bin if it exists
+if [ -d "/bin" ] ; then
+    PATH="$PATH:/bin"
+fi
+
+#eval "$(oh-my-posh init bash --config ~/.poshthemes/stevenjv.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshthemes/rudolfs-customized.omp.json)"
+
+export AutomationBrowser=Chrome
+# export AutomationChromeOptionsList="--ignore-certificate-errors|--window-size=1920,1080"
+export AutomationChromeOptionsList="--no-sandbox|--disable-dev-shm-usage|--ignore-certificate-errors|--window-size=1920,1080"
+export AutomationDataFileLocationXml=~/repos/insights/Environments.xml
+export AutomationDriverFilePath=/usr/bin #See https://github.com/aws/aws-codebuild-docker-images/blob/master/ubuntu/standard/4.0/Dockerfile#L91
+export AutomationEnvironment=WobblyQA
+export AutomationFailureScreenshotPath=~/testauto/screenshots
+export AutomationImplicitWait=300000
+export AutomationLogFilePath=~/testauto/logs
+export AutomationMinimumLogLevel=verbose
+export TestCaseFilter=TestCategory=PlatformIntegration
+export DOTNET_ROOT=$HOME/dotnet
