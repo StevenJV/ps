@@ -1,6 +1,4 @@
-#setx REPODIR "C:\Users\steve\source\repos"
-
-
+$Env:REPODIR = "~\source\repos\"
 set-Alias which get-command
 Set-Alias gitc GitCommit
 set-alias log GitLog
@@ -10,16 +8,17 @@ set-Alias remotebranches ~\source\repos\ps\remotebranches.ps1
 set-Alias dirdate ~\source\repos\ps\dirdate.ps1
 Set-Alias grep ~\source\repos\ps\Grep.ps1
 set-alias findfile ~\source\repos\ps\findfile.ps1
-#Set-Alias Python ~\AppData\Local\Microsoft\WindowsApps\python3.9.exe
+#Set-Alias Python ~\AppData\Local\Microsoft\WindowsApps\python3.exe
 . \users\steve\source\repos\dev-deploy\Launcher\Launcher.ps1
 
 function repos {
-  cd %REPODIR%
+  Push-Location  ~\source\repos\
 }
-
-
 function insights {
-  cd ~\source\repos\insights
+  Push-Location ~\source\repos\insights
+}
+function stat {
+  git status
 }
 function GitShortLog {
   git log --pretty=format:'%C(yellow) %ad %C(blue)%h%Cred%d %Creset%s%Cred [%cn]' --decorate --date=format:'%Y-%m-%d %H:%M'
@@ -28,7 +27,7 @@ function GitLog {
   git log --name-only
 }
 function GitCommit {
- git commit
+  git commit
 }
 function aws-login{
   navex aws login  --skip-version-check
@@ -45,22 +44,15 @@ function aws-login{
 
 #import-module psreadline
 
-Import-Module posh-git 
-#$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-#$GitPromptSettings.AfterText += "`n"
-
-Import-Module oh-my-posh 
-#Set-PoshPrompt Powerlevel10k_Lean
-Set-PoshPrompt -Theme ~/.mytheme.omp.json
-# Paradox, Fish, Agnoster, Darkblood 
-
-#Import-Module -Name Terminal-Icons
-
-#start-service 'OpenSSH Authentication Agent'
-#Start-SshAgent -Quiet
+# Import-Module posh-git 
+# Import-Module oh-my-posh 
+# Get-PoshThemes
+Set-PoshPrompt star
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
+
+if ($env:TERM_PROGRAM -eq "vscode") { . "$(code --locate-shell-integration-path pwsh)" }
