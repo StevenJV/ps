@@ -1,4 +1,4 @@
 Param(
   [string]$filename
 )
-Get-Childitem -Path C:\ -Include $filename -File -Recurse -ErrorAction SilentlyContinue
+Get-Childitem -Path . -Include $filename -File -Recurse -ErrorAction SilentlyContinue
