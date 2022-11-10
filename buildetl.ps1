@@ -7,14 +7,11 @@ function buildthem
     )
     process
     {
-        $msBuildExe = 'C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\msbuild.exe'
-        #$msBuildExe = MSBuild 
-        
-        Write-Host "Cleaning $($path)" -foregroundcolor Yellow
-        & "$($msBuildExe)" "$($path)" /t:Clean /verbosity:quiet /property:Configuration=Release
+      Write-Host "Cleaning $($path)" -foregroundcolor Green
+      dotnet build $($path) /t:Clean /verbosity:quiet /property:Configuration=Release
 
-        Write-Host "Building $($path)" -ForegroundColor Green
-        & "$($msBuildExe)" "$($path)" /t:Build /verbosity:quiet /property:Configuration=Release
+      Write-Host "Building $($path)" -ForegroundColor Green
+      dotnet build $($path) /t:Build /verbosity:quiet /property:Configuration=Release
     }
 }
 
