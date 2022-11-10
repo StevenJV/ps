@@ -6,9 +6,31 @@
         {
             "command": 
             {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "ctrl+\\"
+        },
+        {
+            "command": 
+            {
                 "action": "commandPalette"
             },
             "keys": "ctrl+shift+p"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -30,35 +52,13 @@
             "keys": "ctrl+t"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command": "closePane",
             "keys": "ctrl+w"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "ctrl+\\"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
     "disableAnimations": true,
     "initialCols": 120,
     "initialRows": 44,
@@ -72,51 +72,37 @@
             {
                 "face": "CaskaydiaCove NF"
             },
+            "opacity": 95,
             "scrollbarState": "visible",
             "startingDirectory": "%USERPROFILE%\\source\\repos",
-            "opacity": 95,
             "useAcrylic": false
         },
         "list": 
         [
             {
                 "colorScheme": "Solarized Dark",
+                "elevate": false,
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "colorScheme": "Solarized Dark",
+                "elevate": false,
                 "font": 
                 {
                     "size": 14
                 },
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell",
+                "guid": "{34a13805-9b56-5e89-9234-f02de44bd971}",
+                "hidden": true,
+                "name": "PowerShell 7.2.5",
+                "source": "Windows.Terminal.PowershellCore",
                 "unfocusedAppearance": 
                 {
-                    "background": "#041d23",
-                    "foreground": "#88857c"
+                    "background": "#041D23",
+                    "foreground": "#88857C"
                 }
-            },
-            {
-                "colorScheme": "Frost",
-                "commandline": "powershell.exe -command Start-Process -Verb RunAs \"shell:appsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App\"",
-                "guid": "{9bec7dc9-82f6-577f-b371-d8b35ca9582e}",
-                "hidden": false,
-                "icon": "ms-appx:///Images/Square44x44Logo.targetsize-32.png",
-                "name": "Powershell (elevated)",
-                "unfocusedAppearance": 
-                {
-                    "background": "#272727",
-                    "foreground": "#0251fd"
-                }
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": true,
-                "name": "Command Prompt"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
             },
             {
                 "colorScheme": "Tango Dark",
@@ -131,9 +117,15 @@
                 "startingDirectory": "~",
                 "unfocusedAppearance": 
                 {
-                    "background": "#1d1a1a",
+                    "background": "#1D1A1A",
                     "foreground": "#767874"
                 }
+            },
+            {
+                "guid": "{6caa1e95-98f1-5cd3-8510-a35224f30de3}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{68302b48-6b4e-5b12-b4af-1e0ae97579ab}",
@@ -160,10 +152,54 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "guid": "{34a13805-9b56-5e89-9234-f02de44bd971}",
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
                 "hidden": true,
-                "name": "PowerShell 7 (x86)",
-                "source": "Windows.Terminal.PowershellCore"
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{2be26514-fb4b-5c98-9791-ae83f310403b}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2022 (2)",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Solarized Dark",
+                "font": 
+                {
+                    "size": 14
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell",
+                "unfocusedAppearance": 
+                {
+                    "background": "#041D23",
+                    "foreground": "#88857C"
+                }
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": true,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{4b884522-d80c-595f-834c-4173362b9ced}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{f220c3a5-eb76-5edd-a95c-187c3f66386e}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
@@ -328,7 +364,7 @@
             "red": "#D30102",
             "selectionBackground": "#FFFFFF",
             "white": "#EEE8D5",
-            "yellow": "#B58900",
+            "yellow": "#B58900"
         },
         {
             "background": "#FDF6E3",
@@ -354,8 +390,8 @@
             "yellow": "#B58900"
         },
         {
-            "background": "#2a2624",
-            "black": "#2a2624",
+            "background": "#2A2624",
+            "black": "#2A2624",
             "blue": "#0515A4",
             "brightBlack": "#555753",
             "brightBlue": "#85BAF2",
