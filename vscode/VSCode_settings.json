@@ -1,0 +1,41 @@
+{
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "breadcrumbs.enabled": false,
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.onTaskErrors": "debugAnyway",
+  "debug.openDebug": "openOnDebugBreak",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "CaskaydiaCove NF",
+  "editor.fontLigatures": true,
+  "editor.formatOnType": true,
+  "editor.minimap.enabled": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.scrollbar.horizontal": "visible",
+  "editor.scrollbar.horizontalScrollbarSize": 12,
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "git.branchPrefix": "biscayne-",
+  "git.confirmSync": false,
+  "git.mergeEditor": true,
+  "notebook.lineNumbers": "on",
+  "python.defaultInterpreterPath": "C:\\Users\\steve\\AppData\\Local\\Microsoft\\WindowsApps\\python3.exe",
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.untrustedFiles": "open",
+  "team.showFarewellMessage": false,
+  "team.showWelcomeMessage": false,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.shellIntegration.enabled": false,
+  "testExplorer.addToEditorContextMenu": true,
+  "window.newWindowDimensions": "offset",
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "editor.background": "#020016"
+  },
+  "workbench.colorTheme": "An Old Hope",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "none"
+}

@@ -33,17 +33,12 @@
           "type": "root"
         },
         {
-          "style": "plain",
-          "template": "<cyan>{{ .UserName }}</> <darkGray>@</> <green>{{ .HostName }}</> ",
-          "type": "session"
-        },
-        {
           "foreground": "lightYellow",
           "properties": {
             "style": "full"
           },
           "style": "plain",
-          "template": "<darkGray>in </>{{ .Path }} ",
+          "template": "{{ .Path }} ",
           "type": "path"
         },
         {
