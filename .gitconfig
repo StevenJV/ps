@@ -52,21 +52,23 @@
 	undo = reset head~
 	hist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --graph --abbrev-commit --date=relative
 [merge]
-	tool = bc
-	guitool = kdiff3
+	tool = vscode
+	guitool = vscode
 [mergetool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
 	trustExitCode = false
 [diff]
-	guitool = kdiff3
-	tool = bc
-[difftool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	trustExitCode = false
+	guitool = vscode
+	tool = vscode
 [difftool]
 	prompt = false
 [difftool "vscode"]
-	cmd = "code \"$LOCAL\" \"$REMOTE\" --wait --diff  "
+cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+[mergetool "vscode"]
+cmd = code --wait -m $REMOTE $LOCAL $BASE $MERGED
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+	trustExitCode = false
 [difftool "bc"]
 	path = C:\\Program Files\\BeyondCompare4\\BCompare.exe
 [mergetool "bc"]
