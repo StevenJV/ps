@@ -11,7 +11,7 @@
   "editor.fontFamily": "CaskaydiaCove NF",
   "editor.fontLigatures": true,
   "editor.formatOnType": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.scrollbar.horizontal": "visible",
   "editor.scrollbar.horizontalScrollbarSize": 12,
@@ -28,14 +28,30 @@
   "team.showFarewellMessage": false,
   "team.showWelcomeMessage": false,
   "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+        "path": "/bin/zsh",
+        "args": ["-l", "-i"]
+    }
+},
   "terminal.integrated.shellIntegration.enabled": false,
   "testExplorer.addToEditorContextMenu": true,
-  "window.newWindowDimensions": "offset",
-  "window.zoomLevel": 1,
+"window.newWindowDimensions": "offset",
   "workbench.colorCustomizations": {
     "editor.background": "#020016"
   },
   "workbench.colorTheme": "An Old Hope",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "window.nativeTabs": true,
+  "git.openRepositoryInParentFolders": "always",
+  "editor.accessibilitySupport": "off",
+  "testExplorer.useNativeTesting": true,
+  "gitlens.views.branches.branches.layout": "list",
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "zenMode.hideLineNumbers": false,
+  "terminal.external.osxExec": "iTerm.app"
 }
