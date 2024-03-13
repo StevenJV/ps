@@ -1,10 +1,8 @@
 [user]
-	name = 
-	email = 
+	name = Steven Vore
+	email = steven.vore@coxautoinc.com
 [gui]
 
-[credential]
-	helper = wincred
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -51,27 +49,23 @@
 	l3 = log --pretty=format:'%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]' --decorate
 	undo = reset head~
 	hist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) [%an]%Creset' --graph --abbrev-commit --date=relative
-[merge]
-	tool = vscode
-	guitool = vscode
-[mergetool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	trustExitCode = false
 [diff]
 	guitool = vscode
 	tool = vscode
 [difftool]
 	prompt = false
-[difftool "vscode"]
-cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
-[mergetool "vscode"]
-cmd = code --wait -m $REMOTE $LOCAL $BASE $MERGED
-[difftool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-	trustExitCode = false
-[difftool "bc"]
-	path = C:\\Program Files\\BeyondCompare4\\BCompare.exe
-[mergetool "bc"]
-	path = C:\\Program Files\\BeyondCompare4\\BCompare.exe
+
+[merge]
+	tool = vscode
+	guitool = vscode
 [mergetool]
 	keepBackup = false
+[mergetool "vscode"]
+  cmd = code --wait -m $REMOTE $LOCAL $BASE $MERGED
+[difftool "vscode"]
+  cmd = code --wait --diff \"$LOCAL\" \"$REMOTE\"
+
+[credential "https://git-codecommit.us-east-1.amazonaws.com"]
+  helper =
+  helper = !aws codecommit credential-helper $@
+  useHttpPath = true
