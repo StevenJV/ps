@@ -1,0 +1,16 @@
+{
+	"servers": {
+		"cai-mcp": {
+			"command": "/usr/local/bin/cai-mcp",
+			"env": {
+				-- there were keys here for Rally, token and url for GitHub
+			},
+			"args": [
+				"--config",
+				"${env:HOME}\\.caimcp\\config.yaml"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": []
+}

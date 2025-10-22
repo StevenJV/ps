@@ -2,26 +2,20 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
-  "breadcrumbs.enabled": false,
   "debug.internalConsoleOptions": "neverOpen",
   "debug.onTaskErrors": "debugAnyway",
   "debug.openDebug": "openOnDebugBreak",
   "editor.bracketPairColorization.enabled": true,
-  "editor.detectIndentation": false,
-  "editor.fontFamily": "CaskaydiaCove NF",
+  "editor.fontFamily": "'CaskaydiaCove NF','Cascadia Code PL',  'Courier New', 'monospace'",
   "editor.fontLigatures": true,
   "editor.formatOnType": true,
   "editor.minimap.enabled": false,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.scrollbar.horizontal": "visible",
   "editor.scrollbar.horizontalScrollbarSize": 12,
-  "editor.tabSize": 2,
   "git.autofetch": true,
-  "git.branchPrefix": "biscayne-",
   "git.confirmSync": false,
   "git.mergeEditor": true,
   "notebook.lineNumbers": "on",
-  "python.defaultInterpreterPath": "C:\\Users\\steve\\AppData\\Local\\Microsoft\\WindowsApps\\python3.exe",
   "security.workspace.trust.banner": "never",
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.untrustedFiles": "open",
@@ -30,17 +24,12 @@
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.profiles.osx": {
     "zsh": {
-        "path": "/bin/zsh",
-        "args": ["-l", "-i"]
+      "path": "/bin/zsh",
+      "args": ["-l", "-i"]
     }
-},
-  "terminal.integrated.shellIntegration.enabled": false,
-  "testExplorer.addToEditorContextMenu": true,
-"window.newWindowDimensions": "offset",
-  "workbench.colorCustomizations": {
-    "editor.background": "#020016"
   },
-  "workbench.colorTheme": "An Old Hope",
+  "testExplorer.addToEditorContextMenu": true,
+  "window.newWindowDimensions": "offset",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "window.nativeTabs": true,
@@ -53,5 +42,89 @@
   "hexeditor.defaultEndianness": "little",
   "hexeditor.inspectorType": "aside",
   "zenMode.hideLineNumbers": false,
-  "terminal.external.osxExec": "iTerm.app"
+  "terminal.external.osxExec": "iTerm.app",
+  "vsicons.dontShowNewVersionMessage": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.trimTrailingWhitespace": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-3.5-turbo",
+  "editor.tabSize": 2,
+  "workbench.editorAssociations": {
+    "*.trx": "trxviewer.trxPreview"
+  },
+  "interactiveWindow.promptToSaveOnClose": true,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "debug.confirmOnExit": "always",
+  "workbench.settings.applyToAllProfiles": [
+    "github.copilot.chat.codeGeneration.useInstructionFiles"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "autocommitmessageprefix.pattern": "^([a-zA-Z0-9_-]+)",
+  "autocommitmessageprefix.spaceafter": true,
+  "github-enterprise.uri": "https://ghe.coxautoinc.com.com",
+  "github.gitAuthentication": true,
+  "github-actions.use-enterprise": true,
+  "github.copilot.selectedCompletionModel": "",
+  "database-client.autoSync": true,
+  "pgsql.serverGroups": [
+    {
+      "name": "Servers",
+      "id": "92F62F6B-59F8-4D3C-8B95-D4F8B9CBB7CF",
+      "isDefault": true
+    }
+  ],
+  "pgsql.connections": [
+    {
+      "id": "A4FD51D2-44D5-45D1-94D7-D32AD08F2207",
+      "groupId": "92F62F6B-59F8-4D3C-8B95-D4F8B9CBB7CF",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "require",
+      "savePassword": true,
+      "server": "stage-listings-singular-mink.awscalnp.manheim.com",
+      "profileName": "Stage Listing V2",
+      "user": "upward_jennet",
+      "password": "",
+      "database": "hip_labrador",
+      "sshPassword": "",
+      "expiresOn": 0
+    }
+  ],
+  "editor.fontVariations": false,
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#282c34",
+    "terminal.foreground": "#a6e22e",
+    "tab.activeBackground": "#3d560d",
+    "tab.activeForeground": "#dae3f4",
+    "tab.inactiveForeground": "#282c34",
+    "editor.selectionBackground": "#94e22e53",
+    "editor.selectionForeground": "#011130",
+    "editor.inactiveSelectionBackground": "#94e22e53",
+    "editor.wordHighlightForeground": "#011130",
+    "editor.wordHighlightBackground": "#2e9ae26a",
+    "editor.wordHighlightBorder": "#fafbf9e5",
+    "editor.worldHighlightStrongBackground": "#94e22e53",
+    "editor.wordHighlightStrongBorder": "#00ff11",
+    "editor.findMatchBackground": "#dd2200",
+    "editor.findMatchHighlightBackground": "#dd322275",
+    "editor.findRangeHighlightBackground": "#ba7d0159",
+    "editor.findMatchBorder": "#374d4d",
+    "editor.findMatchHighlightBorder": "#aa2200"
+  },
+  "chat.agent.todoList": {
+    "position": "default"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
