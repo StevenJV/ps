@@ -9,13 +9,9 @@ set-Alias dirdate ~\source\repos\ps\dirdate.ps1
 Set-Alias grep ~\source\repos\ps\Grep.ps1
 set-alias findfile ~\source\repos\ps\findfile.ps1
 #Set-Alias Python ~\AppData\Local\Microsoft\WindowsApps\python3.exe
-. \users\steve\source\repos\dev-deploy\Launcher\Launcher.ps1
 
 function repos {
   Push-Location  ~\source\repos\
-}
-function insights {
-  Push-Location ~\source\repos\insights
 }
 function stat {
   git status
@@ -29,23 +25,10 @@ function GitLog {
 function GitCommit {
   git commit
 }
-function aws-login{
-  navex aws login  --skip-version-check
-  $complete = Read-Host -Prompt 'Signed in? (Y/N)'
-  if ($complete -eq 'Y' -OR $complete -eq 'y'){
-    # this is how local-dev Insights reads the credentials for sending notifications
-      Copy-Item \Users\steve\.aws\credentials \aws
-      Write-Host 'Ready to go'
-  }
-  else{
-      Write-Host 'Might want to answer Y, credentials not copied'
-  }
-}
-
 #import-module psreadline
 
-# Import-Module posh-git 
-# Import-Module oh-my-posh 
+# Import-Module posh-git
+# Import-Module oh-my-posh
 # Get-PoshThemes
 Set-PoshPrompt star
 
