@@ -68,7 +68,7 @@
   },
   "autocommitmessageprefix.pattern": "^([a-zA-Z0-9_-]+)",
   "autocommitmessageprefix.spaceafter": true,
-  "github-enterprise.uri": "https://ghe.coxautoinc.com.com",
+  "github-enterprise.uri": "https://ghe.coxautoinc.com",
   "github.gitAuthentication": true,
   "github-actions.use-enterprise": true,
   "github.copilot.selectedCompletionModel": "",
