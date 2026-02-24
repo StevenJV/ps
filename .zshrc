@@ -38,6 +38,13 @@ export RPM_UPDATE_LISTING=50
 export RPM_GET_UPDATE_LISTING=50
 export RPM_DELETE_LISTING=50
 
+# for CAL.CD.TestAutomation
+# Options: local, dev, stage
+# Primary environment variable
+export IT_ENV=stage
+# Legacy compatibility
+export IT_ENVIRONMENT=stage
+
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 
 
@@ -51,3 +58,5 @@ alias -g cleanbranchesfrommain="git switch main; git branch --merged | grep -Ev 
 alias -g dockernuke="docker system prune -a"
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+// added by uv (Python package manager)?
+export PATH="$HOME/.dotnet:$PATH"
