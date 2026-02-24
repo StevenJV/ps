@@ -7,8 +7,9 @@ export HOMEBREW_REPOSITORY="/opt/homebrew";
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-export ARTIFACTORY_USER=[redacted]]
+export ARTIFACTORY_USER=[redacted]
 -- there were keys here for Artifactory, Rally, and a token for GitHub
+
 export ASPNETCORE_ENVIRONMENT=docker
 #export GECKO_DRIVER=~/Library/GeckoDriver
 export GECKO_DRIVER=/opt/homebrew/bin/geckodriver
@@ -58,5 +59,8 @@ alias -g cleanbranchesfrommain="git switch main; git branch --merged | grep -Ev 
 alias -g dockernuke="docker system prune -a"
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-// added by uv (Python package manager)?
+
 export PATH="$HOME/.dotnet:$PATH"
+
+// added by uv (Python package manager)
+. "$HOME/.local/bin/env"
