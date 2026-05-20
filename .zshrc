@@ -8,9 +8,15 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 export ARTIFACTORY_USER=[redacted]
--- there were keys here for Artifactory, Rally, and a token for GitHub
-
+export ARTIFACTORY_API_KEY=[redacted]
+export RALLY_API_KEY=[redacted]
+# ghe token for copilot
+export GITHUB_TOKEN=[redacted]
+# -cai github.com token for speckit
+export GH_TOKEN=[redacted]
+export PROMPTLY_API_KEY=[redacted]
 export ASPNETCORE_ENVIRONMENT=docker
+
 #export GECKO_DRIVER=~/Library/GeckoDriver
 export GECKO_DRIVER=/opt/homebrew/bin/geckodriver
 export NUGET_PKGS=/Users/$USER/.nuget/packages
@@ -59,8 +65,7 @@ alias -g cleanbranchesfrommain="git switch main; git branch --merged | grep -Ev 
 alias -g dockernuke="docker system prune -a"
 
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+export PATH="$PATH:$HOME/.dotnet"
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
 
-export PATH="$HOME/.dotnet:$PATH"
-
-// added by uv (Python package manager)
 . "$HOME/.local/bin/env"
